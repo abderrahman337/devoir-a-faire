@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport"content="width=device-width ,initiale-scale=1.0">
+      <title>document</title>
+      <link rel="stylesheet" href="css/style.css">
+     <style>
+      .choice{border:10px solid red;height:270px;float: left;background-color:rgb(18, 65, 80)}
+      .choice,select{padding: 10px;text-align: center;color:floralwhite}
+
+      .form{background-color:cyan;border:10px solid green;height: 270px;float: right;width:70%;}
+     </style>
+     <script>
+       function valider(){
+         var s1=document.getElementById("s1").value;
+         var form=document.getElementById("form");
+         if(s1=="2")
+         {
+           form.innerHTML='il n y a pas de descriptif pour cet etage ';
+           
+           return;
+
+         }
+         if(s1=="1")
+         {
+           form.innerHTML='<img src="premiere Etg.jpg" style="width:410px;heigth:260px;">';
+           return;
+         }
+         if(s1=="0")
+         {
+           form.innerHTML='<img src="rez de choussez.jpg"style="width:410px;heigth:260px;">';
+           return;
+         }
+         
+       }
+     </script>
+       
+    </head>
+    <body >
+        <div class="choice">
+            <h1>choisissez l'etage desirez</h1>
+        
+          <select id="s1"onchange="valider();">
+            <optgroup style="font-size: 20px;color:brown"label="faite votre choix"> 
+             <option value="0">rez de choussez</option>
+             <option value="1">premiere Etg</option>
+             <option value="2">combles</option>
+         </select>
+           </optgroup>
+      </div>
+    <div class="form">
+        <div id="form"></div>
+    </div>
+   
+
+    </body>
+</html>

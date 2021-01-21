@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+        .body{background-color:#A7EDDF ;}
+        .form{border: 6px solid black groove;width: 50px; }
+        label{color: red;display: block;}
+       
+        </style>
+        <script>
+         function Alea(min, max){
+         return Math.floor(Math.random() * (max - min) ) + min;
+                    }
+               </script> 
+
+               <script>     
+            var x=0,y=1; 
+            function verifier(){
+            var d1=document.querySelector("#d1");
+            var t1=document.querySelector("#t1");
+            
+            if(t1.value=="")
+            {
+                d1.innerHTML="un champs est vide ";
+                return;
+            }
+        }
+        </script>
+    </head>
+    <body class="body">
+     
+        
+             <form class="form">
+                 
+                 <label >A+B</label>
+                 <input id="demo"type="text"size="8"><br><br>
+                 <label >A-B</label>
+                 <input id="demo"type="text"size="8"><br><br>
+                 <label for="multiple">A*B</label>
+                 <input id="demo"type="text"size="8"><br><br>
+                 <label for="division">A/B</label>
+                 <input id="demo"type="text"size="10"><br><br>
+                 </form>  
+              <button onclick="document.getElementById('d1').innerHTML=Alea(-100,100)">
+                 aleatoire</button><br>
+               <form>
+                 <p id="d1"></p>
+             
+              
+              <button type="button"onclick="verifier()">verifier</button>
+              <p id="p01"></p>
+
+              </form>
+              <script>
+                  function verifier(){
+                      var message,x;
+                      message=document.getElementById("p01");
+                      message.innerHTML="";
+                      x=document.getElementById("demo").value;
+                      try{ if(x=="")throw "champs vide"}
+                     catch(err){message.innerHTML=""+err;
+                    }
+                  }
+              </script>
+    </body>
+</html>
